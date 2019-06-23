@@ -1,6 +1,7 @@
-(ns anagrams.anagrams)
+(ns anagrams.anagrams
+  (:require [clojure.string :as str]))
 
-(defn wordToSortedArray [word] (sort (to-array word)))
+(defn wordToSortedArray [word] (sort (to-array (str/lower-case  word))))
 
 (defn areAnagrams 
   [word, comapritorWord]

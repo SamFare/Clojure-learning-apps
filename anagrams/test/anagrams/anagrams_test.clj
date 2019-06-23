@@ -29,3 +29,8 @@
     (=
       (findAngrams ["test"] "test") 
       [])))
+
+(deftest the-anagram-finder-ignores-the-words-case
+  (is (=
+        (findAngrams ["Fresher"] "refresh") 
+        ["Fresher"])))
