@@ -5,4 +5,5 @@
   :dependencies [[org.clojure/clojure "1.10.0"]]
   :repl-options {:init-ns anagrams.anagrams}
   :test-paths ["test"]
+  :main anagrams.core
 )
