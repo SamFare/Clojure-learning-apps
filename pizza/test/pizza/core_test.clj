@@ -48,3 +48,15 @@
 (deftest the-findPizza-function-Throws-An-error-if-the-pizza-is-not-valid
   (testing "the findPizza function Throws An error if the pizza is not valid"
     (is (thrown? Exception (findPizza pizzaOrders "notInList")))))
+
+(deftest the-calculateTotalCost-function-retruns-0-when-there-is-nothing-in-the-list
+  (testing "The calculateTotalCost function retruns 0 when there is nothing in the list"
+    (is (= (calculateTotalCost  []) 0))))
+
+(deftest the-calculateTotalCost-function-retruns-the-value-of-the-one-item-in-the-list
+  (testing "The calculateTotalCost function retruns 0 when there is nothing in the list"
+    (is (= (calculateTotalCost  [{:price 23.99}]) 23.99))))
+    
+(deftest the-calculateTotalCost-function-retruns-the-sum-of-all-items-in-the-list
+  (testing "The calculateTotalCost function retruns the sum of all items in the list"
+    (is (= (calculateTotalCost  [{:price 23.99}, {:price 15.99}]) 39.98))))

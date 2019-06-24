@@ -17,6 +17,10 @@
     :price 23.99
   }])
 
+(defn calculateTotalCost
+  [selectedOrders]
+    (double (reduce #(+ %1 (get %2 :price)) 0 selectedOrders)))
+
 (defn pizzaOrderAsString 
   [pizzaOrders]
     (->> pizzaOrders
@@ -41,7 +45,11 @@
   (println 
     (->> selectedOrders
       (map #(format "%s %.2f" (get % :id) (get % :price)))
-      (join "\n"))))
+      (join "\n")))
+  (println 
+    (format "Total Cost %.2f" (calculateTotalCost selectedOrders)))
+  (println "-----------------\n\n"))
+  
 
 (defn eventLoop
     [pizzaOrders, selectedOrders]
